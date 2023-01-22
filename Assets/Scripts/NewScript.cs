@@ -13,6 +13,6 @@ public class NewScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, 0, 1);
+        transform.Translate(0, 1, 0);
     }
 }
