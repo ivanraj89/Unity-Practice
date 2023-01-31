@@ -2,7 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewScript : MonoBehaviour
+public interface IExplodable
+{
+    public void Explode();
+}
+public class NewScript : MonoBehaviour, IExplodable
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +18,8 @@ public class NewScript : MonoBehaviour
     void Update()
     {
         transform.Translate(0, 1, 0);
+        
+
     }
+    public void Explode();
 }
