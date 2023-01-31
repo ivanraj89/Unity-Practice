@@ -6,7 +6,7 @@ public interface IExplodable
 {
     public void Explode();
 }
-public class NewScript : MonoBehaviour, IExplodable
+public class NewScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -21,5 +21,5 @@ public class NewScript : MonoBehaviour, IExplodable
         
 
     }
-    public void Explode();
+
 }
