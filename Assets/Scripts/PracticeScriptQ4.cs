@@ -12,6 +12,8 @@ public class PracticeScriptQ4 : MonoBehaviour
     [SerializeField]
     private Rigidbody rb;
 
+    [SerializeField]
+
     // Start is called before the first frame update
     void Start()
     {
