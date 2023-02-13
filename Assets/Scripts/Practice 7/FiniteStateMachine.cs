@@ -27,7 +27,11 @@ public class FiniteStateMachine : MonoBehaviour
 
     void Patrol()
     {
-
+        transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPatrolPoint].position, patrolSpeed * Time.deltaTime);
+        if (Vector3.Distance(transform.position, patrolPoints[currentPatrolPoint].position) < 0.2f)
+        {
+            currentPatrolPoint = (currentPatrolPoint + 1) % patrolPoints.Length;
+        }
     }
 
     void Chase()
