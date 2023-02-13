@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class FiniteStateMachine : MonoBehaviour
 {
+    public Transform[] patrolPoints;
+    public float patrolSpeed;
+    public float chaseSpeed;
+
+    private int currentPatrolPoint = 0;
+    public Transform targetObject;
+    private bool chasing = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -15,5 +23,15 @@ public class FiniteStateMachine : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void Patrol()
+    {
+
+    }
+
+    void Chase()
+    {
+
     }
 }
