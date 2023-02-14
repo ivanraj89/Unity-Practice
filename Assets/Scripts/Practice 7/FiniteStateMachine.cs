@@ -34,30 +34,37 @@ public class FiniteStateMachine : MonoBehaviour
 
     void Patrol()
     {
+        // Move towards the current patrol point
         transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPatrolPoint].position, patrolSpeed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, patrolPoints[currentPatrolPoint].position) < 0.2f)
+        // if we've reached the current patrol point, move on to the next one
+        if (Vector3.Distance(transform.position, patrolPoints[currentPatrolPoint].position) < 1f)
         {
             currentPatrolPoint = (currentPatrolPoint + 1) % patrolPoints.Length;
         }
 
+        // Check if the player is within sight
         Vector3 direction = targetObject.position - transform.position;
         RaycastHit hit;
         if(Physics.Raycast(transform.position, direction, out hit, 5f))
         {
-            if(hit.transform == CompareTag("Player"))
+            if(hit.collider !=null && hit.collider.CompareTag("Player"))
             {
                 chasing= true;
             }
         }
+        // Use debug drawline to simulate the line 
         Debug.DrawLine(transform.position, transform.position + direction.normalized * 5f, Color.red);
 
     }
 
     void Chase()
     {
+        // Move toward the player
         transform.position = Vector3.MoveTowards(transform.position,targetObject.position, chaseSpeed * Time.deltaTime);
 
-        if(Vector3.Distance(transform.position, targetObject.position) > 10f)
+
+        // Check if the player has escaped and then return to the patrol point
+        if(Vector3.Distance(transform.position, patrolPoints[currentPatrolPoint].position) > 6f)
         {
             chasing = false;
         }
