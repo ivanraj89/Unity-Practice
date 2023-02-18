@@ -34,7 +34,8 @@ public class Constructor_Practice_3 : MonoBehaviour
     private void Start()
     {
         Book randomBook = new Book("Requiem", "IvanRaj", 40, 50);
-        randomBook.randomStuff();
+        //randomBook.randomStuff();
+        randomBook.bookDetails();
     }
 
 }
