@@ -1,7 +1,5 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Constructor_Practice_5 : MonoBehaviour
