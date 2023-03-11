@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using JetBrains.Annotations;
 
 public class Practice1 : MonoBehaviour
 {
+    public int humanHealth;
     class Human
     {
         private int health;
@@ -34,7 +36,8 @@ public class Practice1 : MonoBehaviour
 
     private void Start()
     {
-        Human ivan = new Human(200);
+
+        Human ivan = new Human(humanHealth);
 
         Debug.Log(ivan.Health);
     }
