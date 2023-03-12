@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Practice3 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Car : MonoBehaviour
     {
-        
+        private Vector3 m_Position;
+
+        public Vector3 Position
+        {
+            get { return transform.position}
+            set { transform.position = value; }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
